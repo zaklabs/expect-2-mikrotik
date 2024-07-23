@@ -53,6 +53,15 @@ to generate RSA-Keys
 ```shell
 ssh-keygen -f data/id_rsa_router -C "docker"
 ```
+| Files | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id_rsa_router` | `private` | **very confidential**. save you private key |
+| `id_rsa_router.pub` | `public` | upload into host router and add as SSH keys |
+
+#### Import to SSH key on router
+```shell
+[admin@mikrotik]> user ssh-keys import public-key-file=id_rsa_router.pub user=admin-ssh
+```
 
 to run command 
 ```shell
