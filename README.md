@@ -29,7 +29,7 @@ set mac [lindex $argv 1]
 set ipaddress [lindex $argv 2]
 set ses 1
 
-spawn "ssh" "-l" "user1" "-i" "~/.ssh/id_rsa4" "$host1"
+spawn "ssh" "-l" "user1" "-i" "./id_rsa_router" "$host1"
 set ses $spawn_id
 set timeout 200
 expect -i $ses "*user1*@*]*>"
@@ -48,6 +48,11 @@ close
 ```
 
 I have imported rsa-key into router (Mikrotik), so I can login without password ask. using this expect script I can login from host Router box into other using mac-telnet.
+
+to generate RSA-Keys
+```shell
+ssh-keygen -f data/id_rsa_router -C "docker"
+```
 
 to run command 
 ```shell
