@@ -55,7 +55,7 @@ $ docker exec -it ubuntu_expect18 ./set_remote.sh <ip address of host Router> <m
 ```
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](log-mac-telnet.jpg)
 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
