@@ -49,21 +49,21 @@ close
 
 I have imported rsa-key into router (Mikrotik), so I can login without password ask. using this expect script I can login from host Router box into other using mac-telnet.
 
-to generate RSA-Keys
+#### To generate RSA-Keys
 ```shell
 ssh-keygen -f data/id_rsa_router -C "docker"
 ```
 | Files | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `id_rsa_router` | `private` | **very confidential**. save you private key |
-| `id_rsa_router.pub` | `public` | upload into host router and add as SSH keys |
+| `id_rsa_router` | `private` | **very confidential**.|
+| `id_rsa_router.pub` | `public` | upload into host router and add as SSH keys. |
 
 #### Import to SSH key on router
 ```shell
 [admin@mikrotik]> user ssh-keys import public-key-file=id_rsa_router.pub user=admin-ssh
 ```
 
-to run command 
+#### To run command 
 ```shell
 $ docker exec -it ubuntu_expect18 ./set_remote.sh <ip address of host Router> <mac to connect to> <ip address to set on interface with mac>
 ```
