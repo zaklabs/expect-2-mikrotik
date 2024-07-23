@@ -3,7 +3,7 @@ set ip [lindex $argv 0]
 set mac [lindex $argv 1]
 set ses 1
 
-spawn "ssh" "-l" "user1" "-i" "~/.ssh/id_rsa4" "10.81.81.13"
+spawn "ssh" "-l" "user1" "-i" "./id_rsa_router" "10.81.81.13"
 set ses $spawn_id
 set timeout 200
 expect -i $ses "*user1*@*]*>"
